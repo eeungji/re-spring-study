@@ -40,7 +40,6 @@
                     border-radius: 4px;
                     font-size: 18px;
                 }
-
                 .form-container h1 {
                     font-size: 40px;
                     font-weight: 700;
@@ -49,20 +48,17 @@
                     margin-bottom: 20px;
                     color: #ffffff;
                 }
-
                 .form-container h2 {
                     font-size: 30px;
                     color: #222;
                     text-align: center;
                     margin-bottom: 20px;
                 }
-
                 label {
                     display: block;
                     margin-bottom: 5px;
                     font-size: 20px;
                 }
-
                 #title,
                 #writer {
                     font-size: 18px;
@@ -74,7 +70,6 @@
                     margin-bottom: 10px;
                     background-color: rgba(255, 255, 255, 0.8);
                 }
-
                 #content {
                     height: 400px;
                     font-size: 18px;
@@ -86,18 +81,15 @@
                     margin-bottom: 10px;
                     background-color: rgba(255, 255, 255, 0.8);
                 }
-
                 textarea {
                     resize: none;
                     height: 200px;
                 }
-
                 .buttons {
                     display: flex;
                     justify-content: flex-end;
                     margin-top: 20px;
                 }
-
                 button {
                     font-size: 20px;
                     padding: 10px 20px;
@@ -110,19 +102,15 @@
                     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                     transition: background-color 0.3s;
                 }
-
                 button.list-btn {
                     background: #e61e8c;
                 }
-
                 button:hover {
                     background-color: #3d8b40;
                 }
-
                 button.list-btn:hover {
                     background: #e61e8c93;
                 }
-
                 /* 페이지 css */
                 /* 페이지 액티브 기능 */
                 .pagination .page-item.p-active a {
@@ -131,7 +119,6 @@
                     cursor: default;
                     pointer-events: none;
                 }
-
                 .pagination .page-item:hover a {
                     background: #888 !important;
                     color: #fff !important;

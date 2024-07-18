@@ -1,7 +1,9 @@
 package com.study.springstudy.springmvc.chap05.api;
 
+import com.study.springstudy.springmvc.chap04.common.Page;
 import com.study.springstudy.springmvc.chap05.dto.request.ReplyPostDto;
 import com.study.springstudy.springmvc.chap05.dto.response.ReplyDetailDto;
+import com.study.springstudy.springmvc.chap05.dto.response.ReplyListDto;
 import com.study.springstudy.springmvc.chap05.service.ReplyService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,15 +21,19 @@ import java.util.Map;
 @RequestMapping("/api/v1/replies")
 @RequiredArgsConstructor
 @Slf4j
+@CrossOrigin
 public class ReplyApiController {
 
     private final ReplyService replyService;
 
     // 댓글 목록 조회 요청
-    // URL : /api/v1/replies/원본글번호   -  GET -> 목록조회
+    // URL : /api/v1/replies/원본글번호/page/페이지번호   -  GET -> 목록조회
     // @PathVariable : URL에 붙어있는 변수값을 읽는 아노테이션
-    @GetMapping("/{bno}")
-    public ResponseEntity<?> list(@PathVariable long bno) {
+    @GetMapping("/{bno}/page/{pageNo}")
+    public ResponseEntity<?> list(
+            @PathVariable long bno
+            , @PathVariable int pageNo
+    ) {
 
         if (bno == 0) {
             String message = "글 번호는 0번이 될 수 없습니다.";
@@ -39,7 +45,7 @@ public class ReplyApiController {
 
         log.info("/api/v1/replies/{} : GET", bno);
 
-        List<ReplyDetailDto> replies = replyService.getReplies(bno);
+        ReplyListDto replies = replyService.getReplies(bno, new Page(pageNo, 5));
 //        log.debug("first reply : {}", replies.get(0));
 
         return ResponseEntity
@@ -57,12 +63,14 @@ public class ReplyApiController {
         log.info("/api/v1/replies : POST");
         log.debug("parameter: {}", dto);
 
+        // BindeingResult 에서 error가 발생된다면,
         if (result.hasErrors()) {
             Map<String, String> errors = makeValidationMessageMap(result);
 
             return ResponseEntity
-                    .badRequest()
-                    .body(errors);
+                    .badRequest()  // 수동으로 badRequest를 내림
+                    .body(errors); //클라이언트에게 보낼 에러 메시지 직접 작성 가능
+            // error가 들어있는 JSON을 보냄
         }
 
         boolean flag = replyService.register(dto);
@@ -73,7 +81,7 @@ public class ReplyApiController {
 
         return ResponseEntity
                 .ok()
-                .body(replyService.getReplies(dto.getBno()));
+                .body(replyService.getReplies(dto.getBno(), new Page(1, 5)));
     }
 
     private Map<String, String> makeValidationMessageMap(BindingResult result) {
@@ -94,7 +102,7 @@ public class ReplyApiController {
     @DeleteMapping("/{rno}")
     public ResponseEntity<?> delete(@PathVariable long rno) {
 
-        List<ReplyDetailDto> dtoList = replyService.remove(rno);
+        ReplyListDto dtoList = replyService.remove(rno);
 
         return ResponseEntity
                 .ok()
