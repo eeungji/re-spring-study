@@ -188,6 +188,9 @@ export async function fetchInfScrollReplies(pageNo=1) {
     document.getElementById('replyCnt').textContent = totalReplies;
     // 초기 댓글 reset
     document.getElementById('replyData').innerHTML = '';
+
+    //1페이지 돌아왔을 때 다시 무한스크롤 걸기
+    setupInfiniteScroll();
   }
 
   // 댓글 목록 렌더링

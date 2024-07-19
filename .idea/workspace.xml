@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec3da5f4-95c0-4ce2-96e2-c5d6bdbf9b4b" name="변경" comment="댓글 API 등록기능 - 입력값 검증">
+    <list default="true" id="ec3da5f4-95c0-4ce2-96e2-c5d6bdbf9b4b" name="변경" comment="댓글 삭제 기능">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/study/springstudy/springmvc/chap05/dto/request/ReplyModifyDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/modifyReply.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/study/springstudy/springmvc/chap05/api/ReplyApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/springstudy/springmvc/chap05/api/ReplyApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/springstudy/springmvc/chap05/dto/response/ReplyDetailDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/springstudy/springmvc/chap05/dto/response/ReplyDetailDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/springstudy/springmvc/chap05/service/ReplyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/springstudy/springmvc/chap05/service/ReplyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/deleteReply.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/deleteReply.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/getReply.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/getReply.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/postReply.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/postReply.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/reply.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/reply.js" afterDir="false" />
     </list>
@@ -562,7 +568,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716771210997</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="댓글 삭제 기능">
+      <option name="closed" value="true" />
+      <created>1721385646821</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1721385646821</updated>
+    </task>
+    <task id="LOCAL-00040" summary="댓글 삭제 기능">
+      <option name="closed" value="true" />
+      <created>1721385660693</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1721385660693</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +603,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="spring mvc - 게시판 앱 1" />
     <MESSAGE value="spring mvc - 게시판 앱 2" />
     <MESSAGE value="spring mvc - 게시판 앱 3" />
     <MESSAGE value="spring mvc - 게시판 앱 4" />
@@ -606,6 +627,18 @@
     <MESSAGE value="Logging" />
     <MESSAGE value="댓글 API 등록기능" />
     <MESSAGE value="댓글 API 등록기능 - 입력값 검증" />
-    <option name="LAST_COMMIT_MESSAGE" value="댓글 API 등록기능 - 입력값 검증" />
+    <MESSAGE value="댓글 삭제 기능" />
+    <option name="LAST_COMMIT_MESSAGE" value="댓글 삭제 기능" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/study/springstudy/springmvc/chap05/service/ReplyService.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

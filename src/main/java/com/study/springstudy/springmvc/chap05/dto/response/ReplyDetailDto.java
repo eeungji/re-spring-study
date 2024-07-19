@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 public class ReplyDetailDto {
 
+    //서버개발자가 클라이언트로 rno로 이름 내릴 때 바꿈
     @JsonProperty("reply_no")
     private long rno;
     private String text;

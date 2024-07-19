@@ -1,6 +1,7 @@
 package com.study.springstudy.springmvc.chap05.api;
 
 import com.study.springstudy.springmvc.chap04.common.Page;
+import com.study.springstudy.springmvc.chap05.dto.request.ReplyModifyDto;
 import com.study.springstudy.springmvc.chap05.dto.request.ReplyPostDto;
 import com.study.springstudy.springmvc.chap05.dto.response.ReplyDetailDto;
 import com.study.springstudy.springmvc.chap05.dto.response.ReplyListDto;
@@ -109,4 +110,34 @@ public class ReplyApiController {
                 .body(dtoList);
     }
 
+    // 댓글 수정 요청
+//    @PutMapping // 전체수정
+    @PatchMapping // 일부수정
+
+    /*
+
+     */
+
+    @RequestMapping(method = {RequestMethod.PUT, RequestMethod.PATCH})
+    public ResponseEntity<?> modify(
+            @Validated @RequestBody ReplyModifyDto dto
+            , BindingResult result) {
+
+        log.info("/api/v1/replies : PUT, PATCH");
+        log.debug("parameter: {}", dto);
+
+        // BindeingResult 에서 error가 발생된다면,
+        if (result.hasErrors()) {
+            Map<String, String> errors = makeValidationMessageMap(result);
+
+            return ResponseEntity
+                    .badRequest()  // 수동으로 badRequest를 내림
+                    .body(errors); //클라이언트에게 보낼 에러 메시지 직접 작성 가능
+            // error가 들어있는 JSON을 보냄
+        }
+
+        ReplyListDto replyListDto = replyService.modify(dto);
+
+        return ResponseEntity.ok().body(replyListDto);
+    }
 }

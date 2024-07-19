@@ -15,6 +15,7 @@ const fetchDeleteReply = async(rno) => {
 
 // 성공적으로 삭제되면, `fetchInfScrollReplies` 함수를 호출하여 댓글 목록 갱신
   fetchInfScrollReplies();
+  window.scrollTo(0, 0); // 삭제 후 페이지 상단으로 이동
 
 };
 
