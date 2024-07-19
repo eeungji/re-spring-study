@@ -112,7 +112,7 @@ public class ReplyApiController {
 
     // 댓글 수정 요청
 //    @PutMapping // 전체수정
-    @PatchMapping // 일부수정
+    //@PatchMapping // 일부수정
 
     /*
 
