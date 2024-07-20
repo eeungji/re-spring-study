@@ -54,23 +54,15 @@
                         <i class="fas fa-thumbs-up"></i> 좋아요
                         <span id="like-count">0</span>
                       </button>
-                      <button
-                        id="dislike-btn"
-                        class="dislike-btn"
-                      >
+                      <button id="dislike-btn" class="dislike-btn">
                         <i class="fas fa-thumbs-down"></i> 싫어요
                         <span id="dislike-count">0</span>
                       </button>
                     </div>
-            
-                    <button
-                      class="list-btn"
-                      type="button"
-                      onclick="window.location.href='${ref}'"
-                    >
+                    <button class="list-btn" type="button" onclick="window.location.href='${ref}'">
                       목록
                     </button>
-                  </div>
+                </div>
 
 
 

@@ -39,3 +39,5 @@
         WHERE board_no = #{boardNo}
             AND reaction_type = DISLIKE"
     </select>
+
+</mapper>

@@ -11,7 +11,7 @@ public interface ReactionMapper {
     // 리액션 생성 - 좋아요, 싫어요 처음 찍었을 때
     void save(Reaction reaction);
 
-    // 리액션 삭제 - 좋아요, 싫어요 취고했을 때
+    // 리액션 삭제 - 좋아요, 싫어요 취소했을 때
     void delete(@Param("boardNo") long boardNo,
                 @Param("account") String account);
 

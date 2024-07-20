@@ -25,7 +25,7 @@
         <mapper resource="mappers/ScoreMapper.xml" />
         <mapper resource="mappers/BoardMapper.xml" />
         <mapper resource="mappers/ReplyMapper.xml" />
-        <mapper resource="mappers/ReactionMapper.xml"/>
+        <mapper resource="mappers/ReactionMapper.xml" />
     </mappers>
 
 </configuration>
